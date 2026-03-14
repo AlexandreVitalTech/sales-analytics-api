@@ -1,13 +1,3 @@
-from reader import carregar_venda
-from analysis import ticket_medio
-from analysis import total_vendas
-from analysis import vendas_por_categ
-from analysis import vendas_por_cidade
-from analysis import produto_extremo_vendido
-from analysis import analise_canal
-from analysis import analise_pagamento
-dados = carregar_venda()
-
 def sintetizar_relatorio(dados):
     relatorio = {
         "total_vendido": total_vendas(dados),
@@ -56,4 +46,3 @@ def gerar_relatorio():
         "Locais de compra",
         relatorio["analise_canal"]
     )
-    gerar_relatorio()
