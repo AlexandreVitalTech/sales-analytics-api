@@ -1,0 +1,21 @@
+id_venda,data,cliente_id,cidade,produto,categoria,quantidade,preco_unitario,desconto,pagamento,canal
+1,2026-03-01,C001,São Paulo,Camiseta Básica,Roupas,2,39.90,0,Cartão,Loja
+2,2026-03-01,C002,Rio de Janeiro,Calça Jeans,Roupas,1,129.90,10,Cartão,Online
+3,2026-03-02,C003,Belo Horizonte,Tênis Casual,Calçados,1,199.90,0,Pix,Loja
+4,2026-03-02,C004,São Paulo,Boné Esportivo,Acessórios,3,29.90,0,Pix,Online
+5,2026-03-03,C001,São Paulo,Jaqueta Jeans,Roupas,1,179.90,20,Cartão,Loja
+6,2026-03-03,C005,Curitiba,Mochila Urbana,Acessórios,2,89.90,0,Boleto,Online
+7,2026-03-04,C006,Porto Alegre,Tênis Corrida,Calçados,1,249.90,15,Cartão,Loja
+8,2026-03-04,C002,Rio de Janeiro,Camiseta Básica,Roupas,3,39.90,0,Pix,Online
+9,2026-03-05,C007,Salvador,Relógio Esportivo,Acessórios,1,159.90,0,Cartão,Loja
+10,2026-03-05,C003,Belo Horizonte,Calça Jeans,Roupas,2,129.90,5,Cartão,Online
+11,2026-03-06,C008,Fortaleza,Camiseta Básica,Roupas,1,39.90,0,Pix,Loja
+12,2026-03-06,C009,Recife,Tênis Casual,Calçados,1,199.90,0,Cartão,Online
+13,2026-03-07,C010,São Paulo,Mochila Urbana,Acessórios,1,89.90,0,Pix,Loja
+14,2026-03-07,C005,Curitiba,Boné Esportivo,Acessórios,2,29.90,0,Cartão,Loja
+15,2026-03-08,C001,São Paulo,Tênis Corrida,Calçados,1,249.90,25,Cartão,Loja
+16,2026-03-08,C011,Brasília,Camiseta Básica,Roupas,4,39.90,0,Pix,Online
+17,2026-03-09,C012,Florianópolis,Jaqueta Jeans,Roupas,1,179.90,10,Cartão,Loja
+18,2026-03-09,C003,Belo Horizonte,Relógio Esportivo,Acessórios,1,159.90,0,Pix,Online
+19,2026-03-10,C006,Porto Alegre,Calça Jeans,Roupas,1,129.90,0,Boleto,Loja
+20,2026-03-10,C002,Rio de Janeiro,Tênis Casual,Calçados,2,199.90,0,Cartão,Online
