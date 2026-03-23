@@ -1,5 +1,3 @@
-from reader import carregar_venda
-dados = carregar_venda()
 def total_vendas(dados):
      total = 0
      for venda in dados:
