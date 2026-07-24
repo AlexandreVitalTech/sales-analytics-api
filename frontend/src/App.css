@@ -1,0 +1,147 @@
+.dashboard {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dashboard-header h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.dashboard-header .subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --- Cartão "recibo" de resumo --- */
+.receipt {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 32px 20px;
+  margin-bottom: 40px;
+  position: relative;
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.receipt::before,
+.receipt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background:
+    radial-gradient(circle at 8px 4px, var(--paper-alt) 4px, transparent 4.5px) repeat-x;
+  background-size: 16px 8px;
+}
+
+.receipt::before {
+  top: -4px;
+}
+
+.receipt::after {
+  bottom: -4px;
+  transform: rotate(180deg);
+}
+
+.receipt-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.receipt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.receipt-item .label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.receipt-item .value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.receipt-item .value.small {
+  font-size: 16px;
+}
+
+@media (max-width: 720px) {
+  .receipt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Grid de gráficos --- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 780px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px 20px 8px;
+}
+
+.chart-card h2 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.chart-card .chart-note {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.state-msg {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.state-msg.error {
+  color: #a8412f;
+}

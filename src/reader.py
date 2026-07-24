@@ -5,7 +5,11 @@ def carregar_venda():
     base_lib = Path(__file__).resolve().parent.parent
     csv_loc = base_lib / "data" / "data.csv"  
     dados = []
+<<<<<<< HEAD
     with open(csv_loc, 'r') as file:
+=======
+    with open(csv_loc, 'r', encoding='utf-8') as file:
+>>>>>>> 1afe209 (projeto finalizado)
      readCsv = csv.reader(file)
      next(readCsv)
      for line in readCsv:

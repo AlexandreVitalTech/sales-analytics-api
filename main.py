@@ -1,8 +1,24 @@
 from fastapi import FastAPI
+<<<<<<< HEAD
+=======
+from fastapi.middleware.cors import CORSMiddleware
+>>>>>>> 1afe209 (projeto finalizado)
 from typing import Dict, Optional
 from src.reader import carregar_venda
 from src.analysis import *
 app = FastAPI()
+<<<<<<< HEAD
+=======
+
+# Libera o acesso da API para o front-end React rodando em outra porta (Vite usa 5173)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+>>>>>>> 1afe209 (projeto finalizado)
 dados = carregar_venda()
 @app.get("/")
 def root():
@@ -11,12 +27,20 @@ def root():
 @app.get("/total")
 def total():
     resultado = total_vendas(dados)
+<<<<<<< HEAD
     return {"Total de vendas:", resultado}
+=======
+    return {"total_vendas": resultado}
+>>>>>>> 1afe209 (projeto finalizado)
 
 @app.get("/ticket")
 def ticket():
     resultado = ticket_medio(dados)
+<<<<<<< HEAD
     return {"Média de vendas:", resultado}
+=======
+    return {"ticket_medio": resultado}
+>>>>>>> 1afe209 (projeto finalizado)
 
 @app.get("/categoria")
 def categoria() -> Dict[str, int]:

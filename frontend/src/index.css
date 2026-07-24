@@ -1,0 +1,32 @@
+:root {
+  --paper: #faf7f0;
+  --paper-alt: #f1ede2;
+  --ink: #23261f;
+  --ink-soft: #5c6153;
+  --line: #d8d2c0;
+
+  --accent-cartao: #3b4b8c;
+  --accent-pix: #1f8a70;
+  --accent-boleto: #c98a2c;
+  --accent-loja: #23261f;
+  --accent-online: #8c5a3b;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-alt);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+}
