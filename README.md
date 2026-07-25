@@ -1,41 +1,79 @@
-<<<<<<< HEAD
-Sistema fictício de visualização das estatísticas de venda de uma empresa fictícia. No momento, API desenvolvida. Pendente a implementação de interface
-Base de dados usada para o desenvolvimento a nível de testes: data/data.csv
-=======
-# Sales Analytics API + Painel de Vendas
+# 📊 Sales Analytics API + Painel de Vendas
 
-Sistema de visualização das estatísticas de venda de uma empresa fictícia.
+Sistema de análise e visualização de dados de vendas de uma empresa fictícia, com API própria em **FastAPI** e um painel interativo em **React**.
 
-- **Backend**: API em Python (FastAPI), lendo os dados de `data/data.csv`.
-- **Frontend**: painel React (Vite) com gráficos em Recharts, na pasta `frontend/`.
+O projeto nasceu como um exercício prático de todo o ciclo de um produto de dados: leitura e tratamento de um CSV bruto, exposição via API REST, e visualização em gráficos no front-end.
 
-## 1. Rodando o backend (API)
+---
 
-Dentro da pasta deste projeto (`sales-analytics-api-main`):
+## 🧱 Stack
+
+**Backend**
+- Python 3
+- FastAPI
+- Uvicorn (servidor ASGI)
+
+**Frontend**
+- React
+- Vite
+- Recharts (gráficos)
+
+---
+
+## ✨ Funcionalidades
+
+O painel exibe, a partir dos dados de `data/data.csv`:
+
+- 🧾 Resumo geral: total de vendas, ticket médio, produto mais vendido e menos vendido
+- 📦 Vendas por categoria (gráfico de barras)
+- 🏙️ Vendas por cidade (gráfico de barras horizontal)
+- 🛒 Canal de venda — Loja x Online (gráfico de pizza)
+- 💳 Forma de pagamento (gráfico de barras)
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+sales-analytics-api-main/
+├── main.py                # API FastAPI (rotas)
+├── data/
+│   └── data.csv           # Base de dados de vendas
+├── src/
+│   ├── reader.py          # Leitura/parsing do CSV
+│   ├── analysis.py        # Regras de agregação dos dados
+│   └── reports.py         # Geração de relatórios
+└── frontend/
+    ├── index.html
+    ├── package.json
+    └── src/
+        ├── App.jsx         # Layout principal do painel
+        ├── api.js          # Chamadas à API
+        └── ...
+```
+
+---
+
+## 🚀 Como rodar
+
+### Pré-requisitos
+- [Python 3.10+](https://www.python.org/)
+- [Node.js 18+](https://nodejs.org/) (inclui o `npm`)
+
+### 1. Backend (API)
+
+Na raiz do projeto:
 
 ```bash
 pip install fastapi uvicorn
 uvicorn main:app --reload --port 8000
 ```
 
-A API vai subir em `http://127.0.0.1:8000`. Endpoints disponíveis:
+A API sobe em `http://127.0.0.1:8000`.
 
-| Rota          | Retorno                                   |
-|---------------|--------------------------------------------|
-| `/total`      | total de vendas em R$                      |
-| `/ticket`     | ticket médio em R$                         |
-| `/categoria`  | quantidade vendida por categoria           |
-| `/cidade`     | quantidade vendida por cidade              |
-| `/ext_max`    | produto(s) mais vendido(s)                 |
-| `/ext_min`    | produto(s) menos vendido(s)                |
-| `/canal`      | vendas por canal (Loja / Online)           |
-| `/pagamento`  | vendas por forma de pagamento              |
+### 2. Frontend (painel)
 
-> Foi adicionado CORS (`CORSMiddleware`) para o front-end (rodando em outra porta) conseguir chamar a API sem bloqueio do navegador.
-
-## 2. Rodando o front-end (painel)
-
-Em outro terminal, entre na pasta `frontend/`:
+Em outro terminal:
 
 ```bash
 cd frontend
@@ -43,20 +81,37 @@ npm install
 npm run dev
 ```
 
-O Vite vai indicar o endereço local, normalmente `http://localhost:5173`. Abra no navegador — com o backend já rodando na porta 8000, o painel carrega os dados automaticamente.
+O Vite indicará o endereço local (normalmente `http://localhost:5173`). Com o backend rodando na porta 8000, o painel carrega os dados automaticamente.
 
-Se o backend rodar em outra porta/host, ajuste `API_BASE_URL` em `frontend/src/api.js`.
+> Se o backend rodar em outro host/porta, ajuste `API_BASE_URL` em `frontend/src/api.js`.
 
-## 3. Estrutura do painel
+---
 
-- Cartão de resumo (estilo "recibo"): total de vendas, ticket médio, produto mais e menos vendido.
-- Gráfico de barras: vendas por categoria.
-- Gráfico de barras (horizontal): vendas por cidade.
-- Gráfico de pizza: canal de venda (Loja x Online).
-- Gráfico de barras: forma de pagamento.
+## 🔌 Referência da API
 
-## O que foi corrigido em relação à API original
+| Rota          | Descrição                                  |
+|---------------|---------------------------------------------|
+| `GET /total`     | Total de vendas em R$                     |
+| `GET /ticket`    | Ticket médio em R$                        |
+| `GET /categoria` | Quantidade vendida por categoria          |
+| `GET /cidade`    | Quantidade vendida por cidade             |
+| `GET /ext_max`   | Produto(s) mais vendido(s)                |
+| `GET /ext_min`   | Produto(s) menos vendido(s)               |
+| `GET /canal`     | Vendas por canal (Loja / Online)          |
+| `GET /pagamento` | Vendas por forma de pagamento             |
 
-- `/total` e `/ticket` retornavam um `set` Python (`{"texto", valor}`), o que não é uma estrutura JSON confiável. Agora retornam um dicionário (`{"total_vendas": ...}` / `{"ticket_medio": ...}`).
-- Adicionado `CORSMiddleware` para permitir chamadas do front-end React.
->>>>>>> 1afe209 (projeto finalizado)
+CORS está habilitado (`CORSMiddleware`) para permitir chamadas do front-end a partir de outra porta.
+
+---
+
+## 🗺️ Possíveis próximos passos
+
+- Filtro por período (data inicial/final)
+- Autenticação para uso em produção
+- Deploy do backend e do frontend
+
+---
+
+## 👤 Finalidade
+
+Projeto pessoal de estudo, a fim de unir backend (Python + FastAPI), manipulação de dados (CSV) e frontend orientado a dados (React + Recharts).
