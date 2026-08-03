@@ -66,10 +66,10 @@ Na raiz do projeto:
 
 ```bash
 pip install fastapi uvicorn
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8082
 ```
 
-A API sobe em `http://127.0.0.1:8000`.
+A API sobe em `http://127.0.0.1:8082`.
 
 ### 2. Frontend (painel)
 
@@ -81,7 +81,7 @@ npm install
 npm run dev
 ```
 
-O Vite indicará o endereço local (normalmente `http://localhost:5173`). Com o backend rodando na porta 8000, o painel carrega os dados automaticamente.
+O Vite indicará o endereço local (normalmente `http://localhost:5173`). Com o backend rodando na porta 8082, o painel carrega os dados automaticamente.
 
 > Se o backend rodar em outro host/porta, ajuste `API_BASE_URL` em `frontend/src/api.js`.
 
@@ -101,14 +101,6 @@ O Vite indicará o endereço local (normalmente `http://localhost:5173`). Com o 
 | `GET /pagamento` | Vendas por forma de pagamento             |
 
 CORS está habilitado (`CORSMiddleware`) para permitir chamadas do front-end a partir de outra porta.
-
----
-
-## 🗺️ Possíveis próximos passos
-
-- Filtro por período (data inicial/final)
-- Autenticação para uso em produção
-- Deploy do backend e do frontend
 
 ---
 

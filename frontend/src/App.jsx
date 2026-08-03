@@ -110,7 +110,6 @@ export default function App() {
     <div className="dashboard">
       <div className="dashboard-header">
         <h1>Painel de Vendas</h1>
-        <span className="subtitle">resumo do período · dados de teste</span>
       </div>
 
       <div className="receipt">

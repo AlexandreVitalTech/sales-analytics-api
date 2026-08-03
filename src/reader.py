@@ -1,18 +1,18 @@
 import csv
 from datetime import datetime
 from pathlib import Path
+
+
 def carregar_venda():
     base_lib = Path(__file__).resolve().parent.parent
-    csv_loc = base_lib / "data" / "data.csv"  
+    csv_loc = base_lib / "data" / "data.csv"
     dados = []
-<<<<<<< HEAD
-    with open(csv_loc, 'r') as file:
-=======
-    with open(csv_loc, 'r', encoding='utf-8') as file:
->>>>>>> 1afe209 (projeto finalizado)
-     readCsv = csv.reader(file)
-     next(readCsv)
-     for line in readCsv:
+
+    with open(csv_loc, "r", encoding="utf-8", newline="") as file:
+        read_csv = csv.reader(file)
+        next(read_csv)
+
+        for line in read_csv:
             venda = {
                 "id": int(line[0]),
                 "data": datetime.strptime(line[1], "%Y-%m-%d").date(),
@@ -24,7 +24,8 @@ def carregar_venda():
                 "preco": float(line[7]),
                 "desconto": float(line[8]),
                 "pagamento": line[9],
-                "canal": line[10]
+                "canal": line[10],
             }
             dados.append(venda)
+
     return dados

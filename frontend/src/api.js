@@ -1,5 +1,5 @@
-// URL base da API FastAPI. Se o backend rodar em outra porta/host, ajuste aqui.
-export const API_BASE_URL = "http://127.0.0.1:8000";
+// url base da api. altere a porta aqui!
+export const API_BASE_URL = "http://127.0.0.1:8082";
 
 async function get(endpoint) {
   const res = await fetch(`${API_BASE_URL}${endpoint}`);
